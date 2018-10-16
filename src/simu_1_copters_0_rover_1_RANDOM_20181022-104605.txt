@@ -1,0 +1,39 @@
+avg_idleness : 739.315789
+min_idleness : 22.000000
+max_idleness : 3406.000000
+stddev_idleness : 736.898840
+worst_avg_idleness : 3406.000000
+min_number_visit : 1.000000
+max_number_visit : 6.000000
+avg_number_visit : 3.166667
+total_number_visit : 38.000000
+copter avg_battery_used : 0.000000
+copter min_battery_used : 99999999999.000000
+copter max_battery_used : 0.000000
+copter avg_distance : 0.000000
+copter min_distance : 99999999999999.000000
+copter max_distance : 0.000000
+copter avg_time : 0.000000
+copter min_time : 999999999999.000000
+copter max_time : 0.000000
+copter avg_point_visited : 0.000000
+copter min_point_visited : 999999999999.000000
+copter max_point_visited : 0.000000
+copter lost : 0
+rover avg_battery_used : 18324.000000
+rover min_battery_used : 18324.000000
+rover max_battery_used : 18324.000000
+rover avg_distance : 9484.027064
+rover min_distance : 9484.027064
+rover max_distance : 9484.027064
+rover avg_time : 3639.000000
+rover min_time : 3639.000000
+rover max_time : 3639.000000
+rover avg_point_visited : 38.000000
+rover min_point_visited : 38.000000
+rover max_point_visited : 38.000000
+rover lost : 0
+avg_battery_used : 18324.000000
+avg_distance : 9484.027064
+avg_point_visited : 38.000000
+avg_time : 3639.000000

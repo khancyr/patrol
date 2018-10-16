@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="patrol_sim" type="monitor.py" name="monitor" output="screen" cwd="node">
+        <param name="nb_drones" value="3"/>
+    </node>
+
+</launch>
+

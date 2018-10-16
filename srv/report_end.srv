@@ -1,0 +1,8 @@
+int32 point_visited
+float64 distance
+float64 battery_used
+float64 time
+bool lost
+int32 type
+---
+bool success

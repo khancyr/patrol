@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="strategy" value="HIGHEST"/>
+
+    <node pkg="patrol_sim" type="monitor.py" name="monitor" output="screen" cwd="node">
+        <param name="nb_drones" value="20"/>
+        <param name="nb_copter" value="0"/>
+        <param name="nb_rover" value="20"/>
+    </node>
+    <group ns="drone0">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5760/?ids=1,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4243@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="1"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone0"/>
+            <param name="instance" value="0"/>
+        </node>
+    </group>
+    <group ns="drone1">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5770/?ids=2,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4244@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="2"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone1"/>
+            <param name="instance" value="1"/>
+        </node>
+    </group>
+    <group ns="drone2">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5780/?ids=3,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4245@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="3"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone2"/>
+            <param name="instance" value="2"/>
+        </node>
+    </group>
+    <group ns="drone3">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5790/?ids=4,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4246@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="4"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone3"/>
+            <param name="instance" value="3"/>
+        </node>
+    </group>
+    <group ns="drone4">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5800/?ids=5,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4247@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="5"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone4"/>
+            <param name="instance" value="4"/>
+        </node>
+    </group>
+    <group ns="drone5">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5810/?ids=6,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4248@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="6"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone5"/>
+            <param name="instance" value="5"/>
+        </node>
+    </group>
+    <group ns="drone6">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5820/?ids=7,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4249@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="7"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone6"/>
+            <param name="instance" value="6"/>
+        </node>
+    </group>
+    <group ns="drone7">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5830/?ids=8,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4250@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="8"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone7"/>
+            <param name="instance" value="7"/>
+        </node>
+    </group>
+    <group ns="drone8">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5840/?ids=9,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4251@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="9"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone8"/>
+            <param name="instance" value="8"/>
+        </node>
+    </group>
+    <group ns="drone9">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5850/?ids=10,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4252@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="10"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone9"/>
+            <param name="instance" value="9"/>
+        </node>
+    </group>
+    <group ns="drone10">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5860/?ids=11,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4253@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="11"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone10"/>
+            <param name="instance" value="10"/>
+        </node>
+    </group>
+    <group ns="drone11">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5870/?ids=12,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4254@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="12"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone11"/>
+            <param name="instance" value="11"/>
+        </node>
+    </group>
+    <group ns="drone12">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5880/?ids=13,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4255@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="13"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone12"/>
+            <param name="instance" value="12"/>
+        </node>
+    </group>
+    <group ns="drone13">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5890/?ids=14,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4256@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="14"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone13"/>
+            <param name="instance" value="13"/>
+        </node>
+    </group>
+    <group ns="drone14">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5900/?ids=15,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4257@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="15"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone14"/>
+            <param name="instance" value="14"/>
+        </node>
+    </group>
+    <group ns="drone15">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5910/?ids=16,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4258@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="16"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone15"/>
+            <param name="instance" value="15"/>
+        </node>
+    </group>
+    <group ns="drone16">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5920/?ids=17,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4259@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="17"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone16"/>
+            <param name="instance" value="16"/>
+        </node>
+    </group>
+    <group ns="drone17">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5930/?ids=18,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4260@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="18"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone17"/>
+            <param name="instance" value="17"/>
+        </node>
+    </group>
+    <group ns="drone18">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5940/?ids=19,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4261@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="19"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone18"/>
+            <param name="instance" value="18"/>
+        </node>
+    </group>
+    <group ns="drone19">
+        <!--<arg name="fcu_url" default="udp://127.0.0.1:14550@14555"/>-->
+        <arg name="fcu_url" default="tcp://127.0.0.1:5950/?ids=20,240"/>
+        <arg name="gcs_url" default="udp-pb://127.0.0.1:4262@4242"/>
+        <!--<arg name="gcs_url" default=""/>-->
+        <arg name="tgt_system" default="20"/>
+        <arg name="tgt_component" default="1"/>
+        <arg name="log_output" default="screen"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find patrol_sim)/launch/apm_pluginlists.yaml"/>
+            <arg name="config_yaml" value="$(find patrol_sim)/launch/apm_config.yaml"/>
+
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(arg tgt_system)"/>
+            <arg name="tgt_component" value="$(arg tgt_component)"/>
+            <arg name="log_output" value="$(arg log_output)"/>
+        </include>
+        <node pkg="patrol_sim" type="patroler.py" name="patroler" output="screen">
+            <param name="vehicle_name" value="drone19"/>
+            <param name="instance" value="19"/>
+        </node>
+    </group>
+
+</launch>
+

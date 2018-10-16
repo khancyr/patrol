@@ -1,0 +1,4 @@
+int32 goal
+float64 time
+---
+int32 newgoal

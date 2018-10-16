@@ -1,0 +1,36 @@
+plugin_blacklist:
+# common
+- actuator_control
+- ftp
+- safety_area
+- hil
+# extras
+- altitude
+- debug_value
+- image_pub
+- mocap_pose_estimate
+- px4flow
+- vibration
+- vision_speed_estimate
+- cam_imu_sync
+- obstacle_distance
+- fake_gps
+- gps_rtk
+- wind_estimation
+- 3dr_radio
+- adsb
+- manual_control
+- log_transfer
+- setpoint_accel
+- setpoint_attitude
+- trajectory
+- vision_pose_estimate
+- odom
+- rangefinder
+- setpoint_velocity
+- waypoint
+- home_position
+
+plugin_whitelist: []
+
+#- 'sys_*'
